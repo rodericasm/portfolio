@@ -49,7 +49,9 @@ function resolve_pages() {
 }
 
 function deploy() {
-  return src("./app/dist/**/*").pipe(ghPages());
+  return src("./app/dist/**/*").pipe(
+    ghPages("https://github.com/rodericasm/portfolio.git")
+  );
 }
 
 function dev() {
