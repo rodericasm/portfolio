@@ -3,8 +3,9 @@ pre {
   white-space: pre-line;
   margin: 0 auto;
   padding-top: 100px;
+  padding-bottom: 100px;
   width: 300px;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
   line-height: 1.1;
   text-align: center;
   font-size: 13px;
@@ -12,7 +13,7 @@ pre {
 }
 
 a {
-  color: #ff008f;
+  color: #f00;
   text-decoration: none;
   cursor: pointer;
 }
