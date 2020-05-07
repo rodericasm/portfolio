@@ -25,7 +25,7 @@ task("clean", () => del(["./app/dist", "asset-manifest.json"]));
 
 function styles() {
   return (
-    src("./app/src/css/style.css")
+    src("./app/css/style.css")
       // Auto-prefix css styles for cross browser compatibility
       .pipe(autoprefixer({ overrideBrowserslist: AUTOPREFIXER_BROWSERS }))
       .pipe(csso())
@@ -60,7 +60,7 @@ function dev() {
       baseDir: "./app/",
     },
   });
-  watch("app/src/css/**/*.css").on("change", browserSync.reload);
+  watch("app/css/**/*.css").on("change", browserSync.reload);
   watch("app/**/*.html").on("change", browserSync.reload);
 }
 
