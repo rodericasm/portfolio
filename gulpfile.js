@@ -25,10 +25,10 @@ task("clean", () => del(["./app/dist", "asset-manifest.json"]));
 
 function styles() {
   return (
-    src("./app/src/css/style.css")
+    src("./app/css/style.css")
       // Auto-prefix css styles for cross browser compatibility
       .pipe(autoprefixer({ overrideBrowserslist: AUTOPREFIXER_BROWSERS }))
-      .pipe(csso())
+      .pipe(csso()) // Minify
       .pipe(hash()) // Generate hashes for the CSS files
       .pipe(dest("app/dist/css/")) // Save the renamed CSS files (e.g. style.123456.css)
       .pipe(hash.manifest("asset-manifest.json")) // Generate a manifest file
