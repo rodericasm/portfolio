@@ -5,7 +5,6 @@ var references = require("gulp-hash-references");
 var autoprefixer = require("gulp-autoprefixer");
 var csso = require("gulp-csso");
 var htmlmin = require("gulp-htmlmin");
-var ghPages = require("gulp-gh-pages");
 var del = require("del");
 
 const AUTOPREFIXER_BROWSERS = [
@@ -20,6 +19,7 @@ const AUTOPREFIXER_BROWSERS = [
   "bb >= 10",
 ];
 
+//this project uses travis, no build gulp required, just push to master.
 //wipes dist for clean slate, used for clean up any leftover unwanted artifacts( usually made in hashing process )
 task("clean", () => del(["./app/dist", "asset-manifest.json"]));
 
@@ -48,12 +48,6 @@ function resolve_pages() {
     .pipe(dest("app/dist")); // Save the renamed CSS files (e.g. style.123456.css)
 }
 
-function deploy() {
-  return src("./app/dist/**/*").pipe(
-    ghPages("https://github.com/rodericasm/portfolio.git")
-  );
-}
-
 function dev() {
   browserSync.init({
     server: {
@@ -64,6 +58,5 @@ function dev() {
   watch("app/**/*.html").on("change", browserSync.reload);
 }
 
-exports.deploy = series(task("clean"), styles, resolve_pages, deploy);
 exports.build = series(task("clean"), styles, resolve_pages);
 exports.dev = dev;
