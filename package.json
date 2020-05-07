@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/rodericasm/portfolio/issues"
   },
-  "homepage": "https://github.com/rodericasm/portfolio#readme",
+  "homepage": "https://rodericasm.github.io/portfolio",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
