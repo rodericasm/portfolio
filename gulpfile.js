@@ -25,7 +25,7 @@ task("clean", () => del(["./app/dist", "asset-manifest.json"]));
 
 function styles() {
   return (
-    src("./app/css/style.css")
+    src("./app/src/css/style.css")
       // Auto-prefix css styles for cross browser compatibility
       .pipe(autoprefixer({ overrideBrowserslist: AUTOPREFIXER_BROWSERS }))
       .pipe(csso())
