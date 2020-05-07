@@ -21,7 +21,7 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 //wipes dist for clean slate, used for clean up any leftover unwanted artifacts( usually made in hashing process )
-task("clean", () => del(["./app/dist"]));
+task("clean", () => del(["./app/dist", "asset-manifest.json"]));
 
 function styles() {
   return (
