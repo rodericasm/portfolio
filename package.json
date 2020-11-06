@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node gulpfile.js dev"
   },
   "repository": {
     "type": "git",
@@ -17,15 +17,13 @@
   },
   "homepage": "https://rodericasm.github.io/portfolio",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-csso": "^4.0.1",
-    "gulp-gh-pages": "^0.5.4",
     "gulp-hash": "^4.2.2",
     "gulp-hash-references": "^3.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "lodash.template": ">=4.5.0"
+    "gulp-htmlmin": "^5.0.1"
   }
 }
