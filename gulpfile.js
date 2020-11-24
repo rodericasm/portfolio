@@ -34,7 +34,6 @@ function styles() {
 
 function resolve_pages() {
   return src(["./app/index.html"])
-    .pipe(references("asset-manifest.json")) // Replace file paths in index.html according to the manifest
     .pipe(
       htmlmin({
         collapseWhitespace: true,
