@@ -1,7 +1,5 @@
 var { src, dest, series, watch, task } = require("gulp");
 var browserSync = require("browser-sync").create();
-var hash = require("gulp-hash");
-var references = require("gulp-hash-references");
 var autoprefixer = require("gulp-autoprefixer");
 var csso = require("gulp-csso");
 var htmlmin = require("gulp-htmlmin");
@@ -21,7 +19,7 @@ const AUTOPREFIXER_BROWSERS = [
 
 //this project uses travis, no build gulp required, just push to master.
 //wipes dist for clean slate, used for clean up any leftover unwanted artifacts( usually made in hashing process )
-task("clean", () => del(["./app/dist", "asset-manifest.json"]));
+task("clean", () => del(["./app/dist"]));
 
 function styles() {
   return (
@@ -29,9 +27,7 @@ function styles() {
       // Auto-prefix css styles for cross browser compatibility
       .pipe(autoprefixer({ overrideBrowserslist: AUTOPREFIXER_BROWSERS }))
       .pipe(csso()) // Minify
-      .pipe(hash()) // Generate hashes for the CSS files
       .pipe(dest("app/dist/css/")) // Save the renamed CSS files (e.g. style.123456.css)
-      .pipe(hash.manifest("asset-manifest.json")) // Generate a manifest file
       .pipe(dest("."))
   ); // Save the manifest file
 }
