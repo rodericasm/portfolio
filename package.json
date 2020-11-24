@@ -20,10 +20,9 @@
     "browser-sync": "^2.26.13",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+
     "gulp-csso": "^4.0.1",
-    "gulp-hash": "^4.2.2",
-    "gulp-hash-references": "^3.0.1",
+
     "gulp-htmlmin": "^5.0.1"
   }
 }
